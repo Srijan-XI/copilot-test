@@ -19,17 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
         activityCard.className = "activity-card";
 
         const spotsLeft = details.max_participants - details.participants.length;
-        
-        // Create participants list HTML
-        
+
+        // Enhanced participants section
         let participantsHtml = '';
         if (details.participants.length > 0) {
           const participantsList = details.participants
-            .map(email => `<li>${email}</li>`)
+            .map(email => `<li title="Signed up!"><span class="participant-email">${email}</span></li>`)
             .join('');
           participantsHtml = `
             <div class="participants-section">
-              <h5>Current Participants:</h5>
+              <h5>
+                <span class="participants-icon" title="Participants">&#128101;</span>
+                Current Participants
+                <span class="participants-badge">${details.participants.length}</span>
+              </h5>
               <ul class="participants-list">
                 ${participantsList}
               </ul>
@@ -38,8 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           participantsHtml = `
             <div class="participants-section">
-              <h5>Current Participants:</h5>
-              <p class="no-participants">No participants yet - be the first to sign up!</p>
+              <h5>
+                <span class="participants-icon" title="Participants">&#128101;</span>
+                Current Participants
+                <span class="participants-badge">0</span>
+              </h5>
+              <p class="no-participants">No participants yet – be the first to sign up!</p>
             </div>
           `;
         }
