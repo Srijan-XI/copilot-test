@@ -109,6 +109,33 @@ section h3 {
   left: 0;
 }
 
+.participants-icon {
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.participants-badge {
+  background: #1a237e;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin-left: 8px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.participant-email {
+  transition: background 0.2s;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+
+.participants-list li:hover .participant-email {
+  background: #e3eafc;
+}
+
 .no-participants {
   font-style: italic;
   color: #888;
